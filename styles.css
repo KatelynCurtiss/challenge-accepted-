@@ -1,3 +1,87 @@
-/* Mike Jenkins */
-/* 07 MAY 20XX */
+/* Katelyn Curtiss */
+/* 7 May 2024 */
 /* Web Design Challenge */
+
+:root {
+    --white: #fff; 
+    --palegreen: var(lightgreen); 
+    --lightpruple:rgb(255, 207, 255);
+
+}
+
+header {
+    color: beige;
+    background-color: rgb(126, 181, 161);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    grid-column: span 3;
+    text-align: center;
+    border-bottom: 1px solid rgb(255, 255, 178);
+    border-top: 1px solid rgb(255, 255, 178);
+    grid-area: header;
+    }
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0);
+    background: lightblue;
+    background-image: url(pusheen1.jpg);
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    /* This is the desktop layout */
+    grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "article article aside"
+        "footer footer footer";
+    /* column-gap: 10px; */ 
+}
+
+.main-nav {
+    grid-area: nav;
+    /* background-color: aquamarine; */
+    background-color: var(pink);
+    /* border: 2px solid black; */
+}
+.main-nav ul {
+    /* grid-template-columns: 1fr; */
+    grid-template-columns: repeat(3, 1fr);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.main-nav a {
+    background: var(--red);
+    display:block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--);
+    text-transform: uppercase;
+    font-size: 1.1rem; 
+}
+
+.main-nav a:hover{
+    background: var(pink);
+    color: var(pink);
+    grid-area: footer;
+    background-image: url(buttons.jpg);
+}
+
+@media (width > 980px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: max-content 1fr auto auto;
+        /* This is the mobile, single-column layout */
+        grid-template-areas: 
+            "header header header"
+            "nav nav nav"
+            "article article aside"
+            "footer footer footer";
+             /* column-gap: 5px; */
+    } }
+
